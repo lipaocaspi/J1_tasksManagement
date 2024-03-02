@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <title>Tasks</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="creation">
+                <form action="">
+                    <p>Tarea</p>
+                    <input type="text" name="" id="">
+                    <div class="creation__dates">
+                        <div class="creation__date">
+                            <p>Fecha Inicio</p>
+                            <input type="date" name="" id="">
+                        </div>
+                        <div class="creation__date">
+                            <p>Fecha Fin</p>
+                            <input type="date" name="" id="">
+                        </div>
+                    </div>
+                    <div class="creation__resp">
+                        <p>Responsable</p>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="creation__level">
+                        <p>Nivel</p>
+                        <div class="creation__options">
+                            <input type="radio" name="option" id="urgent" value="urgent">
+                            <label for="urgent">Urgente</label>
+                            <input type="radio" name="option" id="high" value="high">
+                            <label for="high">Alta</label>
+                            <input type="radio" name="option" id="medium" value="medium">
+                            <label for="medium">Media</label>
+                            <input type="radio" name="option" id="low" value="low">
+                            <label for="low">Baja</label>
+                            <input type="radio" name="option" id="nonurgent" value="nonurgent">
+                            <label for="nonurgent">No Urgente</label>
+                        </div>
+                    </div>
+                    <button class="creation__button" type="button">
+                        <i class='bx bx-save' ></i>
+                    </button>
+                </form>
+            </div>
+            <div class="management">
+                <h1>Tareas Pendientes</h1>
+                <div class="management__task">
+                    <p>Task</p>
+                    <div class="management__buttons">
+                        <button class="management__button" type="button">
+                            <i class='bx bx-check'></i>
+                        </button>
+                        <button class="management__button" type="button">
+                            <i class='bx bx-x' ></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="list__done">
+                <h1>Tareas Cumplidas</h1>
+            </div>
+            <div class="list__failed">
+                <h1>Tareas Fallidas</h1>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

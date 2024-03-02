@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+}
+
+body {
+    padding: 15px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.creation__dates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.creation__resp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.creation__level {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.creation__button {
+    display: grid;
+    grid-template-columns: 100%;
+
+}
+
+.management__task {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.management__button {
+    border-radius: 50px;
+}
