@@ -10,64 +10,74 @@
 </head>
 <body>
     <main>
+        <h1 class="titulo">Administrador de Tareas</h1>
+        <br>
         <div class="container">
             <div class="creation">
-                <form action="">
-                    <p>Tarea</p>
-                    <input type="text" name="" id="">
+                <form id="registerForm" action="">
+                    <div class="creation__task">
+                        <p class="creation__titles">Tarea</p>
+                        <input class="creation__input" type="text" name="task" id="">
+                    </div>
                     <div class="creation__dates">
                         <div class="creation__date">
-                            <p>Fecha Inicio</p>
-                            <input type="date" name="" id="">
+                            <p class="creation__titles">Fecha Inicio</p>
+                            <input class="creation__date" type="date" name="dateStart" id="">
                         </div>
                         <div class="creation__date">
-                            <p>Fecha Fin</p>
-                            <input type="date" name="" id="">
+                            <p class="creation__titles">Fecha Fin</p>
+                            <input class="creation__date" type="date" name="dateEnd" id="">
                         </div>
                     </div>
                     <div class="creation__resp">
-                        <p>Responsable</p>
-                        <input type="text" name="" id="">
+                        <p class="creation__titles">Responsable</p>
+                        <input type="text" name="nameResp" id="">
                     </div>
                     <div class="creation__level">
-                        <p>Nivel</p>
+                        <p class="creation__titles">Nivel</p>
                         <div class="creation__options">
-                            <input type="radio" name="option" id="urgent" value="urgent">
-                            <label for="urgent">Urgente</label>
-                            <input type="radio" name="option" id="high" value="high">
-                            <label for="high">Alta</label>
-                            <input type="radio" name="option" id="medium" value="medium">
-                            <label for="medium">Media</label>
-                            <input type="radio" name="option" id="low" value="low">
-                            <label for="low">Baja</label>
-                            <input type="radio" name="option" id="nonurgent" value="nonurgent">
-                            <label for="nonurgent">No Urgente</label>
+                            <div class="creation__option">
+                                <input type="radio" name="level" id="urgent" value="urgent">
+                                <label class="creation__label" for="urgent">Urgente</label>
+                            </div>
+                            <div class="creation__option">
+                                <input type="radio" name="level" id="high" value="high">
+                                <label class="creation__label" for="high">Alto</label>
+                            </div>
+                            <div class="creation__option">
+                                <input type="radio" name="level" id="medium" value="medium">
+                                <label class="creation__label" for="medium">Medio</label>
+                            </div>
+                            <div class="creation__option">
+                                <input type="radio" name="level" id="low" value="low">
+                                <label class="creation__label" for="low">Bajo</label>
+                            </div>
                         </div>
                     </div>
-                    <button class="creation__button" type="button">
-                        <i class='bx bx-save' ></i>
+                    <button class="creation__button" type="submit">
+                        <i class='bx bx-plus bx-sm'></i>
                     </button>
                 </form>
             </div>
             <div class="management">
-                <h1>Tareas Pendientes</h1>
+                <h1 class="titulo">Tareas Pendientes</h1>
                 <div class="management__task">
-                    <p>Task</p>
+                    <p class="management__title">Task</p>
                     <div class="management__buttons">
-                        <button class="management__button" type="button">
-                            <i class='bx bx-check'></i>
+                        <button onclick="confirm()" class="management__button green" type="button">
+                            <i class='bx bx-check bx-sm'></i>
                         </button>
-                        <button class="management__button" type="button">
-                            <i class='bx bx-x' ></i>
+                        <button onclick="discard()" class="management__button red" type="button">
+                            <i class='bx bx-x bx-sm'></i>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="list__done">
-                <h1>Tareas Cumplidas</h1>
+                <h1 class="titulo">Tareas Cumplidas</h1>
             </div>
             <div class="list__failed">
-                <h1>Tareas Fallidas</h1>
+                <h1 class="titulo">Tareas Fallidas</h1>
             </div>
         </div>
     </main>
