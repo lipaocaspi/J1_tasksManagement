@@ -101,6 +101,7 @@ form {
     border: 1px solid;
     border-radius: 5px;
     margin: 10px;
+    background-color: #084C61;
 }
 
 .management__buttons {
@@ -113,6 +114,14 @@ form {
 .management__button {
     border-radius: 100px;
     cursor: pointer;
+}
+
+.list__task {
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #084C61;
 }
 
 .green {
