@@ -1,6 +1,11 @@
 let tasksPending = [];
 let tasksDone = [];
 let tasksFailed = [];
+
+const creationInput = document.querySelector('.creation__input');
+const creationDateStart = document.querySelector('.creation__date.start');
+const creationDateEnd = document.querySelector('.creation__date.end');
+const creationResp = document.querySelector('.creation__name');
 const submitButton = document.querySelector('.creation__button');
 const tasksList = document.querySelector('.management');
 const listDone = document.querySelector('.list__done');
@@ -23,7 +28,6 @@ const confirm = (id) => {
         <p class="list__title">${task.task}</p>
     </div>
     `
-    console.log(tasksDone);
 }
 
 const discard = (id) => {
@@ -37,7 +41,6 @@ const discard = (id) => {
         <p class="list__title">${task.task}</p>
     </div>
     `
-    console.log(tasksFailed);
 }
 
 const updatePendingList = (listTasks) => {
@@ -59,31 +62,36 @@ const updatePendingList = (listTasks) => {
     }
 }
 
-document.querySelector('.creation__button').addEventListener('click', function (event) {
+const addTask = (event) => {
     let form = document.getElementById('registerForm');
     let radioOptions = document.getElementsByName('level');
     let tasksData = {};
-    for (let i = 0; i < form.elements.length; i++) {
-        let element = form.elements[i];
-        if (element.name && element.type !== 'submit') {
-            if (element.name == 'level') {
-                for (let j = 0; j < radioOptions.length; j++) {
-                    if (radioOptions[j].checked) {
-                        let selectedValue = radioOptions[j].value;
-                        tasksData[element.name] = selectedValue;
-                        break;
+    if (creationInput.value == '' || creationDateStart.value == '' || creationDateEnd.value == '' || creationResp.value == '' || (!radioOptions[0].checked && !radioOptions[1].checked && !radioOptions[2].checked && !radioOptions[3].checked)) {
+        alert('Por favor, llenar todos los campos')
+    } else {
+        for (let i = 0; i < form.elements.length; i++) {
+            let element = form.elements[i];
+            if (element.name && element.type !== 'button') {
+                if (element.name == 'level') {
+                    for (let j = 0; j < radioOptions.length; j++) {
+                        if (radioOptions[j].checked) {
+                            let selectedValue = radioOptions[j].value;
+                            tasksData[element.name] = selectedValue;
+                            break;
+                        }
                     }
                 }
-            }
-            else {
-                tasksData[element.name] = element.value;
+                else {
+                    tasksData[element.name] = element.value;
+                }
             }
         }
+        tasksData['id'] = tasksPending.length + 1;
+        tasksPending.push(tasksData);
+        form.reset();
+        event.preventDefault();
+        updatePendingList(tasksPending);
     }
-    tasksData['id'] = tasksPending.length + 1;
-    tasksPending.push(tasksData);
-    form.reset();
-    event.preventDefault();
-    updatePendingList(tasksPending);
-    console.log(tasksPending);
-});
+}
+
+document.querySelector('.creation__button').addEventListener('click', addTask);
