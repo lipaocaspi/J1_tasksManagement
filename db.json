@@ -1,5 +1,12 @@
 {
-    "tasksPending": [],
-    "tasksDone": [],
-    "tasksFailed": []
+    "tasksPending": [
+        {
+            "task": "Leer",
+            "dateStart": "15/10/2020",
+            "dateEnd": "15/10/2020",
+            "nameResp": "Paola",
+            "level": "low",
+            "id": 1
+        }
+    ]
 }
