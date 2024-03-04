@@ -2,35 +2,13 @@ let tasksPending = [];
 let tasksDone = [];
 let tasksFailed = [];
 
-const URL_API = "http://192.168.1.12:3000";
-const myHeaders = new Headers({
-    "Content-Type": "application/json"
-});
-
 const creationInput = document.querySelector('.creation__input');
 const creationDateStart = document.querySelector('.creation__date.start');
 const creationDateEnd = document.querySelector('.creation__date.end');
 const creationResp = document.querySelector('.creation__name');
-const submitButton = document.querySelector('.creation__button');
 const tasksList = document.querySelector('.management');
 const listDone = document.querySelector('.list__done');
 const listFailed = document.querySelector('.list__failed');
-
-const saveData = (datos) => {
-    fetch(`${URL_API}/tasksPending`,
-	{
-		method: "POST",
-		headers: myHeaders,
-		body:JSON.stringify(datos)
-	}
-    ).then(res=>{
-        return res.json()
-    }).then(res=>{
-        //idUser=res.id;
-    }).catch(err=>{
-        console.log(err);
-    })
-}
 
 const deleteTask = (id) => {
     tasksPending = tasksPending.filter(function(task) {
@@ -46,6 +24,7 @@ const confirm = (id) => {
     tasksDone.push(task);
     listDone.innerHTML += `
     <div class="list__task">
+        <i class='bx bx-check bx-sm center'></i>
         <p class="list__title">${task.task}</p>
     </div>
     `
@@ -59,6 +38,7 @@ const discard = (id) => {
     tasksFailed.push(task);
     listFailed.innerHTML += `
     <div class="list__task">
+        <i class='bx bx-x bx-sm center'></i>
         <p class="list__title">${task.task}</p>
     </div>
     `
@@ -110,7 +90,6 @@ const addTask = (event) => {
         tasksData['id'] = tasksPending.length + 1;
         tasksPending.push(tasksData);
         updatePendingList(tasksPending);
-        saveData(tasksData);
         form.reset();
         event.preventDefault();
     }

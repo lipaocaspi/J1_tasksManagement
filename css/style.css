@@ -19,7 +19,7 @@ form {
     height: 100%;
 }
 
-.titulo {
+.title {
     text-align: center;
 }
 
@@ -117,6 +117,8 @@ form {
 }
 
 .list__task {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
     padding: 5px;
     border: 1px solid;
     border-radius: 5px;
@@ -132,50 +134,55 @@ form {
     background-color: #F13030;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 1200px) {
-    .creation__resp, .creation__level {
+    .creation__resp--small, .creation__level--small {
         display: grid;
         grid-template-columns: 100%;
     }
 }
 
 @media (max-width: 850px) {
-    .container {
+    .container--small {
         display: grid;
         grid-template-columns: 100%;
     }
-    .creation__resp {
+    .creation__resp--small {
         display: grid;
         grid-template-columns: 30% 70%;
     }
     
-    .creation__level {
+    .creation__level--small {
         display: grid;
         grid-template-columns: 25% 75%;
     }
 }
 
 @media (max-width: 600px) {
-    .creation__resp {
+    .creation__resp--small {
         display: grid;
         grid-template-columns: 100%;
     }
     
-    .creation__level {
+    .creation__level--small {
         display: grid;
         grid-template-columns: 100%;
     }
 }
 
 @media (max-width: 463px) {
-    .creation__options{
+    .creation__options--small {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .creation__titles {
+    .creation__titles--small {
         font-size: 1.2rem;
     }
-    .creation__dates {
+    .creation__dates--small {
         display: grid;
         grid-template-columns: 100%;
     }
