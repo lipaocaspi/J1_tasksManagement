@@ -45,7 +45,7 @@ const discard = (id) => {
 }
 
 const updatePendingList = (listTasks) => {
-    tasksList.innerHTML = `<h1 class="titulo">Tareas Pendientes</h1>`;
+    tasksList.innerHTML = `<h1 class="title">Tareas Pendientes</h1>`;
     for (taskElement of listTasks) {
         tasksList.innerHTML += `
         <div class="management__task">
