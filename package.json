@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "json-server": "^1.0.0-alpha.23"
-  },
-  "scripts": {
-    "run-server": "json-server --host 192.168.1.12 db.json"
-  }
-}
